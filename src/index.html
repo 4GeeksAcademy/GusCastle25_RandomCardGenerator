@@ -3,26 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>GusCastle25_Random Card Generator</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+      <div class="container-fluid text-center">
+        <h1 class="text-white p-4 display-3">Random Cards Generator</h1>
+      </div>
+
+    </div>
+    <!--Cards container-->
+    <div class="container d-flex-column justify-content-center align-items-center cards-container p-3">
+        <!--Card1-->
+        <div id="card1" class="container card d-flex justify-content-between align-items-center mt-4 mb-4 card-container multi-card" style="height: 450px; width: 300px">
+            <div class="suit align-self-start"></div>
+            <div class="number"></div>
+            <div class="suit align-self-end"></div>
+        </div>
+        <!--Card2-->
+        <div id="card2" class="container card d-flex justify-content-between align-items-center mt-4 mb-4  card-container multi-card hidden card2" style="height: 450px; width: 300px">
+            <div class="suit align-self-start suit1"></div>
+            <div class="number"></div>
+            <div class="suit align-self-end suit2"></div>
+        </div>
+        <!--Card3-->
+        <div id="card3" class="container card d-flex justify-content-between align-items-center mt-4 mb-4 card-container multi-card hidden card3" style="height: 450px; width: 300px">
+            <div class="suit align-self-start suit1"></div>
+            <div class="number"></div>
+            <div class="suit align-self-end suit2"></div>
+        </div>
+                
+        <!--buttons-->
+        <div class="container d-flex justify-content-center align-items-center mt-4 mb-2">
+            <button id="new-card-button" class="btn btn-lg">One Random Card</button>
+            <button id="multi-card-button" class="btn btn-lg">Ask for Letter</button>
+        </div>
+
+        <div class="container text-white d-flex justify-content-center align-items-center mt-4 mb-5 p-2 rounded size-container">
+            <div class="d-flex flex-column flex-lg-row align-items-center p-3">
+                <h2 class="text-white me-md-3 mb-md-0">Change card size!</h2>
+                <label for="widthInput">Width</label>
+                <input type="number" id="widthInput" placeholder="Width" value="300">
+                <label for="heightInput">Height</label>
+                <input type="number" id="heightInput" placeholder="Height" value="450">
+                <button id="changeSizeButton" class="btn btn-lg ms-3 me-3">Change Size</button>
+            </div>
+        </div>
+    </div>
+      <div class="text-center p-4" style="color: white;">
+        Made with ❤️ by GusCastle25 for<a href="https://www.4geeksacademy.com">4Geeks Academy</a>
       </div>
     </div>
   </body>
