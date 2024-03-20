@@ -50,21 +50,15 @@ window.onload = function() {
     const minHeight = 350;
     const maxHeight = 700;
 
-    if (userWidth < minWidth) {
-      alert(`The minimum width is ${minWidth}px.`);
-      userWidth = minWidth;
-    } else if (userWidth > maxWidth) {
-      alert(`The maximum width is ${maxWidth}px.`);
-      userWidth = maxWidth;
-    }
+    userWidth =
+      (userWidth < minWidth ? minWidth : userWidth) > maxWidth
+        ? maxWidth
+        : userWidth;
 
-    if (userHeight < minHeight) {
-      alert(`The minimum hight is ${minHeight}px.`);
-      userHeight = minHeight;
-    } else if (userHeight > maxHeight) {
-      alert(`The maximum hight is ${maxHeight}px.`);
-      userHeight = maxHeight;
-    }
+    userHeight =
+      (userHeight < minHeight ? minHeight : userHeight) > maxHeight
+        ? maxHeight
+        : userHeight;
 
     let myDivs = document.querySelectorAll(".card-container");
     myDivs.forEach(div => {
