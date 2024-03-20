@@ -40,6 +40,7 @@ window.onload = function() {
   };
 
   // Change size using user's input
+  // Change size using user's input
   function changeSizeCard() {
     let userWidth = parseInt(document.getElementById("widthInput").value, 10);
     let userHeight = parseInt(document.getElementById("heightInput").value, 10);
@@ -49,24 +50,26 @@ window.onload = function() {
     const minHeight = 350;
     const maxHeight = 700;
 
-    userWidth =
-      userWidth < minWidth
-        ? minWidth
-        : userWidth > maxWidth
-        ? maxWidth
-        : userWidth;
+    if (userWidth < minWidth) {
+      alert(`The minimum width is ${minWidth}px.`);
+      userWidth = minWidth;
+    } else if (userWidth > maxWidth) {
+      alert(`The maximum width is ${maxWidth}px.`);
+      userWidth = maxWidth;
+    }
 
-    userHeight =
-      userHeight < minHeight
-        ? minHeight
-        : userHeight > maxHeight
-        ? maxHeight
-        : userHeight;
+    if (userHeight < minHeight) {
+      alert(`The minimum hight is ${minHeight}px.`);
+      userHeight = minHeight;
+    } else if (userHeight > maxHeight) {
+      alert(`The maximum hight is ${maxHeight}px.`);
+      userHeight = maxHeight;
+    }
 
     let myDivs = document.querySelectorAll(".card-container");
     myDivs.forEach(div => {
-      div.style.width = "{userWidth}px";
-      div.style.height = "${userHeight}px";
+      div.style.width = `${userWidth}px`;
+      div.style.height = `${userHeight}px`;
     });
   }
 
@@ -75,13 +78,12 @@ window.onload = function() {
     .addEventListener("click", function() {
       changeSizeCard();
     });
-
   // MULTI-CARDS
 
   function getMultiCards() {
     let multiCards = document.querySelectorAll(".multi-card");
 
-    // Add class 'hidden' to every element except the first
+    // Add class "hidden" to every element except the first
     multiCards.forEach((card, index) => {
       if (index !== 0) {
         card.classList.add("hidden");
